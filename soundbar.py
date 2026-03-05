@@ -8,7 +8,6 @@ import numpy as np
 #1. key reckognition
 
 def fart1():
-    print("test")
     data, sample = sf.read('fart1.wav')
     sd.play(data, sample)
 
