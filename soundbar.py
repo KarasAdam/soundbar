@@ -9,7 +9,7 @@ import winsound
 
 print("Available Audio Devices:")
 print(sd.query_devices())
-print("\nSoundboard is running. Press 'X' to stop any sound.")
+print("\nSoundboard is running. Press '-' to stop any sound.")
 
 def play_sound(path):
     """
@@ -28,8 +28,8 @@ def stop_sound():
     winsound.PlaySound(None, winsound.SND_PURGE)
 # Hotkeys Setup
 keyboard.add_hotkey('-', stop_sound)
-keyboard.add_hotkey('q', play_sound, args=('sound1.wav',))
-keyboard.add_hotkey('w', play_sound, args=('sound2.wav',))
+keyboard.add_hotkey('q', play_sound, args=('fart1.wav',))
+keyboard.add_hotkey('w', play_sound, args=('bethowen.wav',))
 
 # Keep the script running
 keyboard.wait()
