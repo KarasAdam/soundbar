@@ -6,14 +6,18 @@ import soundfile as sf
 import numpy as np
 import winsound
 print(sd.query_devices())
-#1. key reckognition
 
-def fart1():
-    print(f"działa")
-    data, sample = sf.read('fart1.wav')
+def play_sound(path):
+    data, sample = sf.read(path)
     sd.play(data, sample, device=12)
-    winsound.PlaySound('fart1.wav', winsound.SND_FILENAME | winsound.SND_ASYNC)
+    winsound.PlaySound(path, winsound.SND_FILENAME | winsound.SND_ASYNC)
 
-keyboard.add_hotkey(" ", fart1)
+def stop_sound():
+    sd.stop()
+    winsound.PlaySound(None, winsound.SND_PURGE)
+
+keyboard.add_hotkey('x', stop_sound)
+keyboard.add_hotkey('q', play_sound, args=('fart1.wav',))
+keyboard.add_hotkey('w', play_sound, args=('bethowen.wav',))
 
 keyboard.wait()
