@@ -1,5 +1,4 @@
 # Configuration: Replace with your Virtual Cable ID (check console output on startup)
-#CABLE_OUTPUT_ID = 12
 
 import keyboard
 import sounddevice as sd
@@ -43,9 +42,7 @@ def stop_sound():
 
 # Hotkeys Setup
 keyboard.add_hotkey('-', stop_sound)
-keyboard.add_hotkey('1', play_sound, args=('your_sound2.wav',1.0))
-keyboard.add_hotkey('f', play_sound, args=('your_sound2.wav',2.0))
-keyboard.add_hotkey('r', play_sound, args=('your_sound2.wav',1.0))
+keyboard.on_press_key('1', lambda event: play_sound('sound1.wav', 1.0))
 
 # Keep the script running
 keyboard.wait()
